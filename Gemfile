@@ -30,3 +30,5 @@ end
 gem 'bourbon'
 gem 'd3_rails'
 
+gem 'rspec-rails'
+gem 'guard-rspec', require: false
