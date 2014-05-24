@@ -16,7 +16,7 @@ var layer = new L.StamenTileLayer("watercolor");
 
 var map = L.map('map').setView([-36.853282, 174.765896], 13);
 
-// map.addLayer(layer);
+map.addLayer(layer);
 
 // var hello = L.layerGroup([L.tileLayer('http://{s}.tiles.mapbox.com/v3/nzherald.gb3l9agk/{z}/{x}/{y}.png')]).addTo(map);
 
@@ -24,10 +24,30 @@ var map = L.map('map').setView([-36.853282, 174.765896], 13);
 
 
 // resize the map
+var waitForFinalEvent = (function () {
+  var timers = {};
+  return function (callback, ms, uniqueId) {
+    if (!uniqueId) {
+      uniqueId = "Don't call this twice without a uniqueId";
+    }
+    if (timers[uniqueId]) {
+      clearTimeout (timers[uniqueId]);
+    }
+    timers[uniqueId] = setTimeout(callback, ms);
+  };
+})();
 
 var $map = $('#map'),
 	headerHeight = $('#header').height();
+
 $map.height(window.innerHeight - headerHeight);
+
+$(window).resize(function () {
+	waitForFinalEvent(function(){
+		$map.height(window.innerHeight - headerHeight);
+	}, 500, "some unique string");
+});
+
 // $(window).resize(function() {
 // 	$map.height(window.innerHeight - headerHeight)
 // });
