@@ -28,9 +28,9 @@ ActiveRecord::Schema.define(version: 20140524040203) do
   create_table "stops", force: true do |t|
     t.integer  "code"
     t.string   "name"
+    t.spatial  "coordinates", limit: {:srid=>4326, :type=>"point", :geographic=>true}
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.spatial  "coordinates", limit: {:srid=>0, :type=>"point"}
   end
 
 end

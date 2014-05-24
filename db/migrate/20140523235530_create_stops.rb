@@ -3,7 +3,7 @@ class CreateStops < ActiveRecord::Migration
     create_table :stops do |t|
       t.integer :code
       t.string :name
-      t.point :coordinates
+      t.point :coordinates, geographic: true
 
       t.timestamps
     end
