@@ -10,11 +10,13 @@
 	<%= stylesheet_link_tag    'application' %>
 	<%= javascript_include_tag 'applicationhead' %>
 	<%= csrf_meta_tags %>
+	<link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css">
 	</head>
 <body>
 
 	<%= yield %>
 
+<script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
 <%= javascript_include_tag 'application' %>
 </body>
 </html>
