@@ -25,6 +25,7 @@ gem 'jbuilder', '~> 2.0'
 group :development do
   gem 'spring'
   gem 'thin'
+  gem 'pry-rails'
 end
 
 gem 'bourbon'
