@@ -6,6 +6,7 @@ gem 'rails', '4.1.1'
 
 gem 'pg'
 gem 'activerecord-postgis-adapter'
+gem 'rgeo-geojson'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.3'
@@ -23,10 +24,15 @@ gem 'jquery-rails'
 gem 'jbuilder', '~> 2.0'
 
 group :development do
+  gem 'annotate'
   gem 'spring'
   gem 'thin'
+  gem 'pry-rails'
+  gem 'spring-commands-rspec'
 end
 
 gem 'bourbon'
 gem 'd3_rails'
 
+gem 'rspec-rails'
+gem 'guard-rspec', require: false

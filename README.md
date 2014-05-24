@@ -1,6 +1,9 @@
 AxsAkl
 ======
 
+[![Build
+Status](https://travis-ci.org/tuttinator/axsakl.svg?branch=master)](https://travis-ci.org/tuttinator/axsakl)
+
 A Rails app built during [HackAKL](http://hackakl.org.nz) to map access to Public Transport.
 
 
