@@ -1,11 +1,6 @@
 @mixin hide-text
-	overflow: hidden
-
-	&:before
-		content: ""
-		display: block
-		height: 100%
-		width: 0
+	direction: ltr
+	text-indent: -9999px
 
 @mixin off-screen
 	left: -9999px
