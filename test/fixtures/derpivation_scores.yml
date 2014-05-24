@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  meshblocks: 1
+  deprivation_index: 1
+  deprivation_scores: 1
+
+two:
+  meshblocks: 1
+  deprivation_index: 1
+  deprivation_scores: 1

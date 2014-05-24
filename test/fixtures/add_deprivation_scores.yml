@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  meshblocks: 1
+  areaunit: 1
+  dep_index: 1
+  dep_score: 1
+  usual_residents: 1
+
+two:
+  meshblocks: 1
+  areaunit: 1
+  dep_index: 1
+  dep_score: 1
+  usual_residents: 1
