@@ -1,0 +1,18 @@
+@mixin hide-text
+	overflow: hidden
+
+	&:before
+		content: ""
+		display: block
+		height: 100%
+		width: 0
+
+@mixin off-screen
+	left: -9999px
+	position: absolute
+
+@mixin clearfix
+	&:after
+		clear: both
+		content: ""
+		display: table

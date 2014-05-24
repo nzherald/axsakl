@@ -1,0 +1,61 @@
+// ----------------------------------------
+// GENERAL
+
+body
+	background: $background
+	color: $copy
+	font: 14px/18px 'Bitter', serif
+
+a
+	color: $links
+	text-decoration: none
+	&:hover
+		color: $hovers
+
+h1
+	font: bold 30px/30px 'Bitter', serif
+	text-transform: lowercase
+
+	span
+		@include off-screen
+
+// ----------------------------------------
+// HEADER
+
+.header
+	background: $panels
+	padding: 10px
+	@include clearfix
+
+	.logo
+		float: left
+		height: 44px
+
+	.navBtn
+		float: right
+		height: 44px
+		width: 44px
+
+	.nav
+		background: $drawers
+		box-shadow: 0 0 50px $shadow
+		height: 100%
+		right: 0
+		position: absolute
+		top: 0
+		-webkit-transition: all 0.5s
+		transition: all 0.5s
+		-webkit-transform: translate3d(350px, 0, 0)
+		transform: translate3d(350px, 0, 0)
+		width: 300px
+		z-index: 100
+
+	.navCheck
+		display: none
+
+		&:checked ~ .navBtn
+
+			&~ .nav
+				-webkit-transform: translate3d(0, 0, 0)
+				transform: translate3d(0, 0, 0)
+				visibility: visible

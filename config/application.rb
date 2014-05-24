@@ -26,6 +26,7 @@ module AxsAkl
     end
 
     config.sass.preferred_syntax = :sass
+    config.assets.precompile += ['applicationhead.js']
 
   end
 end
