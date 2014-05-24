@@ -4,7 +4,6 @@ class CreateStops < ActiveRecord::Migration
       t.integer :code
       t.string :name
       t.point :coordinates
-      t.boolean :has_structure
 
       t.timestamps
     end
