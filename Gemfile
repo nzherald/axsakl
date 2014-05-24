@@ -26,6 +26,7 @@ group :development do
   gem 'spring'
   gem 'thin'
   gem 'pry-rails'
+  gem 'spring-commands-rspec'
 end
 
 gem 'bourbon'
