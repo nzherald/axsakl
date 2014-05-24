@@ -39,3 +39,7 @@ gem 'spring',        group: :development
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
+gem 'bourbon'
+
+gem 'd3_rails'
+
