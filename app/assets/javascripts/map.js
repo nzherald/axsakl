@@ -25,29 +25,30 @@ map.addLayer(layer);
 
 // resize the map
 var waitForFinalEvent = (function () {
-  var timers = {};
-  return function (callback, ms, uniqueId) {
-    if (!uniqueId) {
-      uniqueId = "Don't call this twice without a uniqueId";
-    }
-    if (timers[uniqueId]) {
-      clearTimeout (timers[uniqueId]);
-    }
-    timers[uniqueId] = setTimeout(callback, ms);
-  };
-})();
+	  var timers = {};
+	  return function (callback, ms, uniqueId) {
+	    if (!uniqueId) {
+	      uniqueId = "Don't call this twice without a uniqueId";
+	    }
+	    if (timers[uniqueId]) {
+	      clearTimeout (timers[uniqueId]);
+	    }
+	    timers[uniqueId] = setTimeout(callback, ms);
+	  };
+	})(),
+	resizeMap = function(){
+		$map.height(window.innerHeight - headerHeight);
+	}
+;
+
 
 var $map = $('#map'),
 	headerHeight = $('#header').height();
 
-$map.height(window.innerHeight - headerHeight);
+resizeMap();
 
 $(window).resize(function () {
 	waitForFinalEvent(function(){
-		$map.height(window.innerHeight - headerHeight);
+		resizeMap();
 	}, 500, "some unique string");
 });
-
-// $(window).resize(function() {
-// 	$map.height(window.innerHeight - headerHeight)
-// });
