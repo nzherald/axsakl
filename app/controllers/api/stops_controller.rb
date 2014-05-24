@@ -1,4 +1,4 @@
-class StopsController < ApplicationController
+class Api::StopsController < ApplicationController
   respond_to :json
 
   def index
