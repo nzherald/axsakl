@@ -19,7 +19,7 @@ var hello = L.layerGroup([L.tileLayer('http://{s}.tiles.mapbox.com/v3/nzherald.g
 $.ajax({ url: '/api/stops.json',
          success: function(result) {
            $.each(result, function(index, value) {
-             L.marker([value.coordinates.coordinates[0], value.coordinates.coordinates[1]]).addTo(map);
+             L.marker([value.coordinates.coordinates[1], value.coordinates.coordinates[0]]).addTo(map);
            });
          }
 });
@@ -55,7 +55,3 @@ $(window).resize(function () {
 		resizeMap();
 	}, 500, "some unique string");
 });
-
-// $(window).resize(function() {
-// 	$map.height(window.innerHeight - headerHeight)
-// });

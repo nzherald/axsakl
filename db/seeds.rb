@@ -6,7 +6,7 @@ if Stop.count.zero?
   CSV.foreach(Rails.root.join('db', 'seeds', 'stops.csv'), headers: true) do |attrs|
     Stop.create!(code: attrs['stop_code'],
                  name: attrs['stop_name'],
-                 coordinates: "POINT(#{attrs['stop_lat']} #{attrs['stop_lon']})")
+                 coordinates: "POINT(#{attrs['stop_lon']} #{attrs['stop_lat']})")
   end
 end
 
