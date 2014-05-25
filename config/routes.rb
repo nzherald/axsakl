@@ -3,6 +3,7 @@ Rails.application.routes.draw do
 
   namespace :api do
     resources :stops, only: [:index, :show]
+    resources :meshblocks, only: [:index, :show]
   end
 
 end

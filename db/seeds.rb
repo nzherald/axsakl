@@ -10,8 +10,31 @@ if Stop.count.zero?
   end
 end
 
-CSV.foreach(Rails.root.join('db','seeds','mb2013.csv'), headers: true) do |attrs|
+if DeprivationScore.count.zero?
+  CSV.foreach(Rails.root.join('db','seeds','deprivation_index.csv'), headers: true) do |attrs|
     DeprivationScore.create(meshblock_id: attrs['meshblock_id'],
-                             deprivation_index: attrs['deprivation_index'],
-                             deprivation_scores: attrs['deprivation_scores'])
+                            deprivation_index: attrs['deprivation_index'],
+                            deprivation_scores: attrs['deprivation_scores'])
+  end
 end
+
+if Meshblock.count.zero?
+  # Make a tmp folder in the Rails root if it does not exist
+  # tmp is ignored by the .gitignore file, so not checked in
+  # to git
+
+  FileUtils.mkdir_p Rails.root.join 'tmp'
+  meshblock_csv_path = Rails.root.join 'tmp', '1_meshblock_geometries.csv'
+
+  if File.exists? meshblock_csv_path
+    CSV.foreach(meshblock_csv_path, headers: true) do |attrs|
+      Meshblock.create(id:    attrs['id'],
+                       shape: attrs['shape'])
+    end
+  else
+    raise 'Please download http://s3-ap-southeast-2.amazonaws.com/censusnz/1_meshblock_geometries.csv and put it in the tmp/ folder'
+
+  end
+
+end
+
