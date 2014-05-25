@@ -7,14 +7,26 @@
 	<nav class="nav">
 		<label for="navCheck" class="navClose">Close</label>
 		<h2>Options</h2>
-		<div class="navOptions">
-			<fieldset title="Time">
-					<h4>Hours</h4>
-					<div id="hours"></div>
-			</fieldset>
-			<fieldset title="Days">
-				<div id="days"></div>
-			</fieldset>
+		<div class="tools">
+		
+			<h3>Hours</h3>
+			<div id="hours" class="slider"></div>
+
+			<h3>Days</h3>
+			<div id="days" class="slider"></div>
+
+			<h3>Mode</h3>
+			<div class="checkGroup">
+
+				<input type="checkbox" id="bus">
+				<label for="bus">Bus</label>
+
+				<input type="checkbox" id="train">
+				<label for="train">Train</label>
+
+				<input type="checkbox" id="ferry">
+				<label for="ferry">Ferry</label>
+
 		</div>
 	</nav>
 
