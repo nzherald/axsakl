@@ -28,12 +28,12 @@ if Meshblock.count.zero?
 
   if File.exists? meshblock_csv_path
     CSV.foreach(meshblock_csv_path, headers: true) do |attrs|
+      next unless attrs['territorial_authority_id'].to_i == 76
       Meshblock.create(id:    attrs['id'],
                        shape: attrs['shape'])
     end
   else
     raise 'Please download http://s3-ap-southeast-2.amazonaws.com/censusnz/1_meshblock_geometries.csv and put it in the tmp/ folder'
-
   end
 
 end
