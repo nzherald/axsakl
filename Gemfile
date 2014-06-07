@@ -35,6 +35,8 @@ group :development, :test do
   gem 'factory_girl_rails'
 end
 
+gem 'bower-rails', '~> 0.7.3'
+
 gem 'bourbon'
 gem 'd3_rails'
 

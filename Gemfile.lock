@@ -37,6 +37,7 @@ GEM
     bourbon (3.2.3)
       sass (~> 3.2)
       thor
+    bower-rails (0.7.3)
     builder (3.2.2)
     celluloid (0.15.2)
       timers (~> 1.1.0)
@@ -192,6 +193,7 @@ DEPENDENCIES
   activerecord-postgis-adapter
   annotate
   bourbon
+  bower-rails (~> 0.7.3)
   coffee-rails (~> 4.0.0)
   d3_rails
   factory_girl_rails

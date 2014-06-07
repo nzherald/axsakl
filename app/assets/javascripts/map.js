@@ -16,23 +16,23 @@ var map = L.map('map').setView([-36.853282, 174.765896], 13);
 
 var hello = L.layerGroup([L.tileLayer('http://{s}.tiles.mapbox.com/v3/nzherald.gb3l9agk/{z}/{x}/{y}.png')]).addTo(map);
 
-/*$.ajax({
+$.ajax({
   url: '/api/stops.json',
   success: function(result) {
     $.each(result, function(index, value) {
       L.marker([value.coordinates.coordinates[1], value.coordinates.coordinates[0]]).addTo(map);
     });
   }
-});*/
+});
 
+/*
 $.ajax({
   url: '/api/meshblocks/135201.json',
   success: function(result) {
     L.geoJSON(result.shape).addTo(map);
   }
 });
-
-
+*/
 
 // resize the map
 var waitForFinalEvent = (function () {
