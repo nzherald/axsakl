@@ -19,21 +19,22 @@ if DeprivationScore.count.zero?
 end
 
 if Meshblock.count.zero?
-  # Make a tmp folder in the Rails root if it does not exist
-  # tmp is ignored by the .gitignore file, so not checked in
-  # to git
 
-  FileUtils.mkdir_p Rails.root.join 'tmp'
-  meshblock_csv_path = Rails.root.join 'tmp', '1_meshblock_geometries.csv'
+  files = Dir[Rails.root.join 'vendor', 'assets', 'bower_components',
+           'simplified_meshblock_geojson', 'meshblocks', '*.json']
 
-  if File.exists? meshblock_csv_path
-    CSV.foreach(meshblock_csv_path, headers: true) do |attrs|
-      next unless attrs['territorial_authority_id'].to_i == 76
-      Meshblock.create(id:    attrs['id'],
-                       shape: attrs['shape'])
+  files.each do |file|
+    puts "Importing #{file}"
+    contents = JSON.parse File.read file
+    next unless contents['features'].first['properties']['TA2014'].to_i == 76
+
+    begin
+      Meshblock.create(id: contents['features'].first['properties']['MB2014'].to_i,
+                     shape: RGeo::GeoJSON.decode(contents['features'].first['geometry'], json_parser: :json))
+    rescue Exception => e
+      puts e
     end
-  else
-    raise 'Please download http://s3-ap-southeast-2.amazonaws.com/censusnz/1_meshblock_geometries.csv and put it in the tmp/ folder'
+
   end
 
 end

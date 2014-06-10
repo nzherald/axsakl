@@ -5,7 +5,7 @@
 #  id         :integer          not null, primary key
 #  created_at :datetime
 #  updated_at :datetime
-#  shape      :spatial          multipolygon, 3857
+#  shape      :spatial          geometry, 0
 #
 
 require 'spec_helper'

@@ -28,7 +28,7 @@ ActiveRecord::Schema.define(version: 20140525002633) do
   create_table "meshblocks", force: true do |t|
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.spatial  "shape",      limit: {:srid=>3857, :type=>"multi_polygon"}
+    t.spatial  "shape",      limit: {:srid=>0, :type=>"geometry"}
   end
 
   create_table "stops", force: true do |t|
