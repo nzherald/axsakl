@@ -36,7 +36,7 @@ var myStyle = {
 
 
 $.ajax({
-  url: '/api/meshblocks/40220.json',
+  url: '/api/meshblocks/236103.json',
   success: function(result) {
     console.log(result);
     L.geoJson(result.shape, { style: myStyle }).addTo(map);
