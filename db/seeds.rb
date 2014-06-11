@@ -21,7 +21,7 @@ end
 if Meshblock.count.zero?
 
   files = Dir[Rails.root.join 'vendor', 'assets', 'bower_components',
-           'simplified_meshblock_geojson', 'meshblocks', '*.json']
+           'simplified_meshblock_geojson', 'geojson', '*.geojson']
 
   files.each do |file|
     puts "Importing #{file}"
