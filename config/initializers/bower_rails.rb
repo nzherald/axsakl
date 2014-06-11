@@ -8,4 +8,5 @@ BowerRails.configure do |bower_rails|
   # Invoke `rake bower:clean` automatically before the `rake assets:precompile` task.
   # bower_rails.clean_before_precompile = true  
   #
+  asset "simplified_meshblock_geojson", "0.0.0", git: "git@github.com:initech/secret_logic"
 end
