@@ -1,6 +1,6 @@
 {
   "name": "dsl-generated dependencies",
   "dependencies": {
-    "simplified_meshblock_geojson": "git://github.com/tuttinator/simplified_meshblock_geojson#0.0.1"
+    "nz_meshblock_geojson": "git://github.com/tuttinator/nz_meshblock_geojson#1.0.0"
   }
 }

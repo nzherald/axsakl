@@ -37,10 +37,12 @@ To run the Rails app:
 
 2. `bundle install` to pull down the gems in the Gemfile
 
-3. `rake db:setup` to create the database and run the
+3. `rake bower:install` to pull down the meshblock geojson bower repo
+
+4. `rake db:setup` to create the database and run the
    migrations
 
-4. `rails s`
+5. `rails s`
 
 
 Periodically you may need to run
